@@ -24,10 +24,20 @@ jobs:
 
           python-version: "3.11"
 
-      - run: pip install -r requirements.txt
+      - name: Install Python packages
 
-      - run: python monitor.py
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright
+
+        run: |
+
+          python -m playwright install chromium
+
+      - name: Run monitor
 
         env:
 
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+        run: python monitor.py
