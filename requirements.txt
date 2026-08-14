@@ -1,4 +1,6 @@
 Plain text
-playwright beautifulsoup4
-1xml
 requests
+
+beautifulsoup4
+
+lxml
